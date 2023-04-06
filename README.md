@@ -1,2 +1,1 @@
-# This is my graduation project
-A receipt scanning app build using React JS and Expo with a database from Firebase
+https://docs.google.com/document/d/13VIvPHMzmlSK3mpsElfhF6hsXSdrP-jLaKhp9eMknvo/edit?usp=drivesdk
