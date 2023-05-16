@@ -1,14 +1,10 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import * as firebase from "firebase";
+import { getDatabase } from 'firebase/database';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAUisiG3SDCcFZfpKimnghJ3n_VdgMOeqU",
   authDomain: "graduation-project-2e021.firebaseapp.com",
+  databaseURL: "https://graduation-project-2e021-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "graduation-project-2e021",
   storageBucket: "graduation-project-2e021.appspot.com",
   messagingSenderId: "290471180510",
@@ -16,10 +12,16 @@ const firebaseConfig = {
   measurementId: "G-CKC9QTXMMW"
 };
 
-// Initialize Firebase
-let app = initializeApp(firebaseConfig);
+let app;
+//let db;
+if (firebase.apps.length === 0) {
+  app = firebase.initializeApp(firebaseConfig);
+  //db = getDatabase(app);
+} else {
+  app = firebase.app();
 
+}
 
-const auth = getAuth(app);
-
-export { auth };
+const auth = firebase.auth();
+const db = firebase.database()
+export { auth, firebase, db };
